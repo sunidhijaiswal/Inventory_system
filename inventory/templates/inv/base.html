@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inventory</title>
+  </head>
+
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}"/>
+
+  <body>
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Inventory System</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'display_laptops' %}" id="navbardrop" data-toggle="dropdown">Laptops</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Add</a>              
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'display_desktops' %}" id="navbardrop" data-toggle="dropdown">Desktops</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Add</a> 
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'display_mobiles' %}" id="navbardrop" data-toggle="dropdown">Mobiles</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Add</a> 
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search"><br>
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <br>
+    <div class="container">
+
+      {% block body %}
+
+
+      {% endblock%}
+
+    </div>
+
+  </body>
+</html>
